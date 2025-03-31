@@ -1,6 +1,6 @@
 const owner = "renatoaraihirooka"; // Substitua pelo usuário ou organização
 const repo = "portal2"; // Substitua pelo nome do repositório
-const githubToken = `${{GITHUB_TOKEN}}`; // Substitua pelo seu token pessoal
+const githubToken = '${{ secrets.GITHUB_TOKEN }}'; // Substitua pelo seu token pessoal
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('runTests').addEventListener('click', async () => {
