@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executar Testes</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Importa o arquivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>Portal de Execução de Testes Automatizados (Regressivo)</h1>
+    </header>
+    <main>
+        <section class="content">
+            <img src="bradesco-logo.png" alt="Bradesco Logo" class="logo">
+            <p class="description">Funcionalidade: LIBERAÇÃO DE CRÉDITO NEGOCIADO:</p>
+            <label for="testExecutionKey" class="input-label">Preencha a chave do Test Execution do X-Ray:</label>
+            <input type="text" id="testExecutionKey" class="input-field" placeholder="Digite a chave aqui">
+            <br> <!-- Linha em branco adicionada -->
+            <button id="runTests" class="btn-primary">Executar Testes</button>
+            <br> <!-- Linha em branco adicionada -->
+            <p id="status" class="status-message"></p>
+            <br> <!-- Linha em branco adicionada -->
+            <p id="jobLink" class="job-link"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Portal Web. Todos os direitos reservados.</p>
+    </footer>
+    <script defer src="script.js"></script> <!-- Importa o arquivo JS -->
+</body>
+</html>

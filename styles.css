@@ -1,0 +1,137 @@
+/* Reset básico */
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Fundo claro */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #d52b1e; /* Vermelho Bradesco */
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .logo {
+    max-width: 150px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content .logo {
+    display: block;
+    margin: 2rem auto; /* Centraliza horizontalmente e adiciona espaço acima e abaixo */
+    max-width: 120px; /* Define o tamanho máximo do logotipo */
+    height: auto; /* Mantém a proporção do logotipo */
+}
+
+.content .description {
+    margin-top: 1rem; /* Espaço acima do texto */
+    margin-bottom: 2rem; /* Espaço abaixo do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary {
+    background-color: #d52b1e; /* Vermelho Bradesco */
+    color: white;
+}
+
+button.btn-primary:hover {
+    background-color: #a32219; /* Vermelho mais escuro */
+}
+
+status-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+job-link {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #d52b1e; /* Vermelho Bradesco */
+}
+
+job-link a {
+    color: #d52b1e; /* Vermelho Bradesco */
+    text-decoration: none;
+}
+
+job-link a:hover {
+    text-decoration: underline;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
