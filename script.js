@@ -1,24 +1,38 @@
 const owner = "renatoaraihirooka"; // Substitua pelo usuário ou organização
 const repo = "portal2"; // Substitua pelo nome do repositório
-const githubToken = '${{ secrets.GITHUB_TOKEN }}'; // Substitua pelo seu token pessoal
+const githubToken = ""; // Substitua pelo seu token pessoal
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('runTests').addEventListener('click', async () => {
+        const testExecutionKey = document.getElementById('testExecutionKey').value; // Captura o valor do input
+
+        if (!testExecutionKey) {
+            document.getElementById('status').innerText = "Por favor, preencha a chave do Test Execution.";
+            return;
+        }
+
         document.getElementById('status').innerHTML = "<br>"; // Adiciona uma linha em branco
         document.getElementById('jobLink').innerHTML = ""; // Limpa o link anterior
 
-        // Disparar o evento repository_dispatch
+        // Disparar o evento repository_dispatch com o testExecutionKey e a branch
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/dispatches`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
                 'Authorization': `Bearer ${githubToken}`
             },
-            body: JSON.stringify({ event_type: 'run-maven-tests' })
+            body: JSON.stringify({
+                event_type: 'run-maven-tests',
+                client_payload: {
+                    testExecutionKey,
+                    branch: 'prateleira' // Especifica a branch
+                }
+            })
         });
 
         if (response.ok) {
-            document.getElementById('status').innerHTML += "Workflow Iniciado! Aguarde...";
+            document.getElementById('status').innerHTML += "Workflow Iniciado na branch 'prateleira'! Aguarde...";
             setTimeout(async () => {
                 const workflowRun = await fetchWorkflowRun();
                 if (workflowRun) {
@@ -28,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     document.getElementById('status').innerText = "Não foi possível obter o link do job.";
                 }
-            }, 5000); // Aguarda 10 segundos antes de buscar o status
+            }, 5000); // Aguarda 5 segundos antes de buscar o status
         } else {
             document.getElementById('status').innerText = "Erro ao acionar workflow.";
         }
